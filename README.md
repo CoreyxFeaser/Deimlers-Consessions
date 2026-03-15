@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Deimler Concessions
 
-## Getting Started
+A premium single-page website for Deimler Concessions food truck. Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Swap Photos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Every image placeholder is a styled `<div>` with "Photo Coming Soon". To replace with a real image:
 
-## Learn More
+1. Drop your images into the `public/` folder (e.g., `public/hero.jpg`)
+2. Find the placeholder `<div>` in the component file (they're marked with `{/* EDIT: ... */}`)
+3. Replace the div with:
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import Image from "next/image";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<Image
+  src="/hero.jpg"
+  alt="Description"
+  fill
+  className="object-cover"
+/>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Make sure the parent container has `relative` in its className (it already does).
 
-## Deploy on Vercel
+## Edit Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All editable content is marked with `{/* EDIT: ... */}` comments in the component files:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Hero text**: `src/components/Hero.tsx`
+- **About/story**: `src/components/About.tsx`
+- **Menu items**: `src/components/Menu.tsx` (edit the `menuItems` array)
+- **Schedule/locations**: `src/components/FindUs.tsx` (edit the `schedule` array)
+- **Contact info**: `src/components/Contact.tsx`
+- **Instagram handle**: `src/components/FindUs.tsx`
+
+## Deploy to Vercel
+
+1. Push your repo to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your GitHub repository
+4. Click Deploy — no configuration needed
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
