@@ -3,7 +3,7 @@
 @theme inline {
   --color-cream: #F5F0E8;
   --color-charcoal: #1A1A18;
-  --color-amber: #D4860A;
+  --color-amber: #C0121A;
   --color-cream-dark: #EDE8DC;
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-playfair);
@@ -20,7 +20,7 @@ body {
 }
 
 ::selection {
-  background-color: #D4860A;
+  background-color: #C0121A;
   color: #F5F0E8;
 }
 
