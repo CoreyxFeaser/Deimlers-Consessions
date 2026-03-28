@@ -62,7 +62,7 @@ export default function Menu() {
           className="mb-16"
         >
           <span className="text-xs tracking-[0.3em] uppercase text-amber block mb-3">
-            What We Serve
+            Something For Everyone
           </span>
           <h2 className="font-editorial text-5xl md:text-7xl lg:text-8xl font-bold text-charcoal">
             THE MENU
@@ -104,6 +104,15 @@ export default function Menu() {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-10 text-sm italic text-charcoal/50 tracking-wide"
+        >
+          Custom menus available for events — ask us when you inquire.
+        </motion.p>
       </div>
     </section>
   );

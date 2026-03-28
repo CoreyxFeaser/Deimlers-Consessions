@@ -90,6 +90,23 @@ export default function FindUs() {
             for daily location updates
           </p>
         </motion.div>
+        {/* Event banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-16 bg-amber px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p className="text-white font-bold text-base md:text-lg tracking-wide">
+            Planning an event? We come to you.
+          </p>
+          <a
+            href="#booking"
+            className="text-white text-sm font-bold tracking-[0.15em] uppercase hover:text-white/80 transition-colors duration-300 whitespace-nowrap"
+          >
+            GET A QUOTE →
+          </a>
+        </motion.div>
       </div>
     </section>
   );

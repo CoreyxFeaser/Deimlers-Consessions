@@ -1,9 +1,10 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import SocialProof from "@/components/SocialProof";
 import About from "@/components/About";
 import Menu from "@/components/Menu";
 import FindUs from "@/components/FindUs";
-import Contact from "@/components/Contact";
+import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -12,10 +13,11 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <SocialProof />
         <About />
         <Menu />
         <FindUs />
-        <Contact />
+        <Booking />
       </main>
       <Footer />
     </>

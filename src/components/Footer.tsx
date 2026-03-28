@@ -12,13 +12,18 @@ export default function Footer() {
 
         {/* Nav links */}
         <div className="flex items-center gap-8">
-          {["Menu", "About", "Find Us", "Contact"].map((link) => (
+          {[
+            { label: "Menu", href: "#menu" },
+            { label: "About", href: "#about" },
+            { label: "Find Us", href: "#find-us" },
+            { label: "Book", href: "#booking" },
+          ].map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase().replace(" ", "-")}`}
+              key={link.label}
+              href={link.href}
               className="text-xs tracking-[0.2em] uppercase text-charcoal/50 hover:text-charcoal transition-colors duration-300"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>

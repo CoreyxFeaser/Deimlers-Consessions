@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Menu", href: "#menu" },
   { label: "About", href: "#about" },
   { label: "Find Us", href: "#find-us" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "#booking" },
 ];
 
 export default function Nav() {
@@ -51,9 +51,15 @@ export default function Nav() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
+            <a
+              href="#booking"
+              className="bg-amber text-white text-xs font-bold tracking-[0.15em] uppercase px-5 py-2.5 hover:bg-amber/90 transition-colors duration-300"
+            >
+              BOOK NOW
+            </a>
             {navLinks.map((link) => (
               <a
-                key={link.href}
+                key={link.href + link.label}
                 href={link.href}
                 className="text-sm tracking-[0.2em] uppercase text-charcoal/70 hover:text-charcoal transition-colors duration-300"
               >
@@ -99,7 +105,7 @@ export default function Nav() {
           >
             {navLinks.map((link, i) => (
               <motion.a
-                key={link.href}
+                key={link.href + link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 initial={{ opacity: 0, y: 30 }}
@@ -111,6 +117,18 @@ export default function Nav() {
                 {link.label}
               </motion.a>
             ))}
+            {/* Mobile Book Now button */}
+            <motion.a
+              href="#booking"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 30 }}
+              transition={{ delay: navLinks.length * 0.08, duration: 0.4 }}
+              className="bg-amber text-white text-sm font-bold tracking-[0.2em] uppercase px-10 py-4 mt-4 hover:bg-amber/90 transition-colors duration-300"
+            >
+              BOOK NOW
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
